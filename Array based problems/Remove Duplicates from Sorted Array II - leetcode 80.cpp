@@ -2,6 +2,7 @@
 *	find problem description @
 *	https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
 */
+// C++ 
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
@@ -26,3 +27,31 @@ public:
         return ++i;
     }
 };
+
+// Written in Java on 1st feb 2020
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int count = 1;
+        int j = 0;
+        for (int i = 1; i < nums.length; ++i)
+        {
+            if (nums[i] == nums[i-1])
+            {
+                ++count;
+                if (count < 3)
+                {
+                    ++j;
+                    nums[j] = nums[i];
+                }
+            }
+            else
+            {
+                count = 1;
+                ++j;
+                nums[j] = nums[i];
+            }
+        }
+        return j + 1;
+    
+    }
+

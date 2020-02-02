@@ -2,6 +2,7 @@
 *	find problem description @
 *	https://leetcode.com/problems/remove-element/description/
 */
+// C++
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -16,3 +17,19 @@ public:
      return ++i;   
     }
 };
+
+
+// Written in Java on 1st Feb 2020
+class Solution {
+    public int removeElement(int[] nums, int val) {
+    int j = 0;
+        for (int i = 0; i < nums.length; ++i)
+        {
+            if (nums[i] != val)
+            {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
+    }
+}

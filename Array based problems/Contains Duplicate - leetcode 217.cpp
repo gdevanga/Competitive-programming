@@ -2,6 +2,7 @@
 *	find problem description @
 *	https://leetcode.com/problems/remove-element/description/
 */
+// C++
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums){
@@ -17,3 +18,16 @@ public:
         return false;
     }
 };
+
+// Written in Java on 1st Feb 2020
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; ++i)
+        {
+            if (nums[i] == nums[i-1])
+                return true;
+        }
+        return false;
+    }
+}
