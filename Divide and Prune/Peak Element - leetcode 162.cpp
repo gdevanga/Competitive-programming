@@ -31,3 +31,26 @@ public:
             return low;
     }
 };
+
+
+// Java 4th Feb 2020
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int low = 0;
+        int high = nums.length-1;
+        while (low < high-1)
+        {
+            int mid = low + (high-low)/2;
+            if (nums[mid-1] < nums[mid] && nums[mid+1] < nums[mid])
+                return mid;
+            else if (nums[mid-1] <= nums[mid])
+                low = mid;
+            else
+                high = mid;
+        }
+        if (nums[low] > nums[high])
+            return low;
+        else
+            return high;
+    }
+}

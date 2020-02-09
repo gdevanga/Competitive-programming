@@ -25,3 +25,25 @@ public:
         
     }
 };
+
+// Java - 4th Feb 2020
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        int low = 1;
+        int high = n;
+        
+        while (low < high-1)
+        {
+            int mid = low + (high-low)/2;
+            if (isBadVersion(mid) == true)
+                high = mid;
+            else
+                low = mid;
+        }
+        if (isBadVersion(low) == true)
+            return low;
+        else
+            return high;
+        
+    }
+}

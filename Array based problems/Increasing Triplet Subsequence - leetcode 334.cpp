@@ -3,6 +3,7 @@ Please check problem description @
 https://leetcode.com/problems/increasing-triplet-subsequence/description/
 */
 
+// C++
 class Solution {
 public:
     bool increasingTriplet(vector<int>& v){
@@ -31,3 +32,21 @@ public:
         return false;
     }
 };
+
+// JAVA - 2nd Feb 2020
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+        int n1 = Integer.MAX_VALUE - 1;
+        int n2 = Integer.MAX_VALUE;
+        for (int i : nums)
+        {
+            if (i > n2)
+                return true;
+            else if (i > n1)
+                n2 = i;
+            else if (i < n1)
+                n1 = i;
+        }
+        return false;
+    }
+}
