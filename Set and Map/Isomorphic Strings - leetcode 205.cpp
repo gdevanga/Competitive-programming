@@ -1,7 +1,7 @@
 // Problem description @ https://leetcode.com/problems/isomorphic-strings/
 
 
-// c++ 
+// c++ : 10th Feb 2020
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
